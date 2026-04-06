@@ -1,0 +1,14 @@
+<?php
+$host= 'localhost';
+$db= 'mypagedb';
+$user= 'root';
+$pass='';
+
+try{
+    $pdo = new PDO ("mysql:host= $host; dbname=$db;charset=utf8mb4",
+    $user, $pass);
+    $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO :: ERRMODE_EXEPTION);
+} catch (PDOException $e){
+    die("Connection failed: ". $e->getMessage());
+}
+?>
